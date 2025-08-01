@@ -1,0 +1,72 @@
+---
+openapi: 3.1.0
+paths:
+  /hello:
+    get:
+      responses:
+        "200":
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+      summary: Hello
+      tags:
+      - Greeting Resource
+  /workstation/racks:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RackDTO"
+        required: true
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+      summary: Save Data
+      tags:
+      - Rack Resource
+    get:
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Rack"
+      summary: Get Racks
+      tags:
+      - Rack Resource
+components:
+  schemas:
+    Rack:
+      type: object
+      properties:
+        serialNumber:
+          type: string
+        status:
+          type: string
+        teamId:
+          type: integer
+          format: int32
+        id:
+          type: integer
+          format: int32
+    RackDTO:
+      type: object
+      properties:
+        serialNumber:
+          type: string
+        status:
+          type: string
+        teamId:
+          type: integer
+          format: int32
+info:
+  title: workstation-rack-module API
+  version: 1.0.0-SNAPSHOT
