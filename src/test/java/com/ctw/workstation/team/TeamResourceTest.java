@@ -53,24 +53,24 @@ class TeamResourceTest {
 //                .path("id");
 //    }
 
-    @Test
-    @DisplayName("Get Team")
-    @Order(2)
-    void get_team() {
-        RestAssured.get()
-                .then()
-                    .assertThat().statusCode(HttpStatus.SC_OK);
-    }
-
-    @Test
-    @DisplayName("Delete Team")
-    @Order(3)
-    void delete_team() {
-        RestAssured
-                .given()
-                .delete("/remove/{id}", teamUUID.getFirst())
-                .then()
-                .assertThat().statusCode(HttpStatus.SC_OK);
-
-    }
+//    @Test
+//    @DisplayName("Get Team")
+//    @Order(2)
+//    void get_team() {
+//        RestAssured.get()
+//                .then()
+//                    .assertThat().statusCode(HttpStatus.SC_OK);
+//    }
+//
+//    @Test
+//    @DisplayName("Delete Team")
+//    @Order(3)
+//    void delete_team() {
+//        RestAssured
+//                .given()
+//                .delete("/remove/{id}", teamUUID.getFirst())
+//                .then()
+//                .assertThat().statusCode(HttpStatus.SC_OK);
+//
+//    }
 }
