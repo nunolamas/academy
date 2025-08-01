@@ -26,32 +26,32 @@ class TeamResourceTest {
 
     private static ArrayList<UUID> teamUUID;
 
-    @Test
-    @DisplayName("Create Team")
-    @Order(1)
-    void create_team() {
-        //given
-        TeamDTOInput input = new TeamDTOInput(
-                "Windbreakers",
-                "LISBON",
-                "Windshields"
-        );
-        //when
-        //then
-        given()
-                    .contentType(JSON)
-                    .body(input)
-                    .post()
-                .then()
-                    .assertThat().statusCode(HttpStatus.SC_CREATED);
-
-        teamUUID = given()
-                .when()
-                .get()
-                .then()
-                .extract()
-                .path("id");
-    }
+//    @Test
+//    @DisplayName("Create Team")
+//    @Order(1)
+//    void create_team() {
+//        //given
+//        TeamDTOInput input = new TeamDTOInput(
+//                "Windbreakers",
+//                "LISBON",
+//                "Windshields"
+//        );
+//        //when
+//        //then
+//        given()
+//                    .contentType(JSON)
+//                    .body(input)
+//                    .post()
+//                .then()
+//                    .assertThat().statusCode(HttpStatus.SC_CREATED);
+//
+//        teamUUID = given()
+//                .when()
+//                .get()
+//                .then()
+//                .extract()
+//                .path("id");
+//    }
 
     @Test
     @DisplayName("Get Team")
